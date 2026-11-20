@@ -1,16 +1,19 @@
-# Knowledge data sources
+# Knowledge data sources and status preservation
 
-`wiki/knowledge/topics.tsv` is the canonical editable catalog of non-paper topics. The 42 paper records are derived directly from stage `papers/core/manifest.tsv` files.
+`wiki/knowledge/topics.tsv` is the canonical metadata table for non-paper topics. The 42 core papers are derived from stage-specific `papers/core/manifest.tsv` files.
 
-To regenerate the complete machine-readable knowledge index:
+**Status sources:**
+- Paper review `wiki/papers/<stage>/<slug>.md`: YAML frontmatter `status: template|draft|reviewed`.
+- Concept/algorithm/system card: `- **Status:** Draft` (or Template/Reviewed).
+- The generated `wiki/knowledge.jsonl` mirrors these statuses. Regeneration **must not** overwrite `reviewed` progress.
+
 ```bash
 python3 scripts/build_knowledge_index.py
 python3 scripts/build_knowledge_index.py --check
 python3 scripts/validate_repo.py
 ```
 
-**Format:** `kind<TAB>slug<TAB>title<TAB>stage<TAB>summary`. Valid kinds are `concept`, `algorithm`, and `system`.
+Topic TSV columns: `kind<TAB>slug<TAB>title<TAB>stage<TAB>summary`. Types are `concept`, `algorithm` and `system`. Add a source row and the corresponding `wiki/<kind>s/<slug>.md` before rebuilding.
 
-New topic workflow: add a TSV entry, create `wiki/<kind>s/<slug>.md`, rebuild, validate and update related paper review.
+Index entries are discovery records, not an assurance of verified model quality or paper experiment reproduction. The [integrity playbook](../../agent_skills/llm-knowledge-curator/references/INTEGRITY.md) explains ID stability, evidence and status transitions.
 
-All paper rows begin at `status=template` until a human or agent produces supported reviews. The index is for discovery, not a performance evidence database.
