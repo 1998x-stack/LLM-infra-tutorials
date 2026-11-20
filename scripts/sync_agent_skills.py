@@ -62,7 +62,7 @@ def inspect_frontmatter(name: str, content: bytes) -> list[str]:
         if "Use " not in value and "use " not in value:
             errors.append(f"{name}: description needs use-case trigger wording")
     # Check structural richness without assuming specific English section names.
-    if len(re.findall(r"(?m)^## [^\\n]+$", text)) < 3:
+    if len(re.findall(r"(?m)^## .+$", text)) < 3:
         errors.append(f"{name}: expected at least three substantive Markdown sections")
     return errors
 
