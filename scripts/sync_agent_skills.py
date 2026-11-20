@@ -61,9 +61,9 @@ def inspect_frontmatter(name: str, content: bytes) -> list[str]:
             errors.append(f"{name}: description length must be 50..1024 characters")
         if "Use " not in value and "use " not in value:
             errors.append(f"{name}: description needs use-case trigger wording")
-    required = ("##", "Stop", "Deliver", "Result")
-    if "##" not in text or not any(word in text for word in required[1:]):
-        errors.append(f"{name}: missing meaningful workflow and outcome sections")
+    # Check structural richness without assuming specific English section names.
+    if len(re.findall(r"(?m)^## [^\\n]+$", text)) < 3:
+        errors.append(f"{name}: expected at least three substantive Markdown sections")
     return errors
 
 
