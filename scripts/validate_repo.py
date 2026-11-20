@@ -72,7 +72,7 @@ def validate() -> list[str]:
         seen_slugs: set[str] = set()
         total += len(rows)
         for p in rows:
-            slug, aid, title = (p.get(k) or "").strip() for k in ("slug", "arxiv_id", "title")
+            slug, aid, title = ((p.get(k) or "").strip() for k in ("slug", "arxiv_id", "title"))
             if not SLUG.fullmatch(slug) or slug in seen_slugs:
                 errors.append(f"{sid}: invalid or duplicate paper slug {slug!r}")
             seen_slugs.add(slug)
