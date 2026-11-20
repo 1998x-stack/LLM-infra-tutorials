@@ -1,0 +1,7 @@
+slug	arxiv_id	title
+megatron-lm	1909.08053	Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism
+zero	1910.02054	ZeRO: Memory Optimizations Toward Training Trillion Parameter Models
+megatron-3d	2104.04473	Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM
+switch	2101.03961	Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity
+deepseek-v2	2405.04434	DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model
+deepseek-v3	2412.19437	DeepSeek-V3 Technical Report

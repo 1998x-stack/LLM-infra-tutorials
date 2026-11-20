@@ -1,0 +1,31 @@
+kind	slug	title	stage	summary
+concept	entropy-cross-entropy	Entropy, Cross-Entropy and KL	01-foundations	Log probability links predictive loss to ideal coding length.
+concept	autograd-adamw	Autograd and AdamW	01-foundations	Chain rule with adaptive moments and decoupled parameter decay.
+concept	attention-qkv	Self-Attention Q/K/V	02-transformer-architecture	Queries score keys and aggregate values under a causal mask.
+concept	rope-gqa	RoPE and Grouped-Query Attention	02-transformer-architecture	Rotary position encoding and sharing of K/V heads alter attention semantics and cache footprint.
+concept	scaling-law	Scaling Laws and Chinchilla	03-pretraining-scaling	Empirical loss fits support compute-conditional decisions on model size and training tokens.
+concept	data-quality	Training Data Quality	03-pretraining-scaling	Dataset composition, deduplication and contamination control affect conclusions.
+concept	lora-dpo	LoRA and DPO	04-post-training-alignment	Low-rank adaptation and direct preference optimization change training parameters and objectives.
+concept	grokking	Grokking and Algorithmic Generalization	05-mechanistic-interpretability	Delayed generalization in controlled tasks motivates circuit and training-dynamics analysis.
+concept	world-model	Internal State and World Models	05-mechanistic-interpretability	Probes and interventions can reveal task-relevant internal state representations.
+concept	superposition-sae	Superposition and Sparse Autoencoders	05-mechanistic-interpretability	Sparse dictionaries can help study polysemantic activation mixtures.
+concept	cot-test-time	Chain of Thought and Test-Time Compute	06-reasoning-rl	Intermediate text and search allocate more computation to hard problems.
+concept	grpo-rlvr	GRPO and Verifiable Rewards	06-reasoning-rl	Group-relative updates and verifiable outcomes shape online reasoning training.
+concept	kv-cache	KV Cache and GQA Footprint	07-inference-optimization	Persisted historical keys/values trade memory capacity for reduced recomputation.
+concept	online-softmax	Online Softmax	07-inference-optimization	Stable streaming max and partition accumulators permit tiled attention.
+concept	goodput	TTFT, TPOT and Goodput	07-inference-optimization	Serving metrics must separate first-token delay, decode pace and SLO-compliant throughput.
+concept	parallelism	DP, TP, PP and EP	08-distributed-frontiers	Sharding and pipelining trade accelerator memory for synchronization and communication.
+concept	moe-routing	Mixture-of-Experts Routing	08-distributed-frontiers	Top-K sparse routing introduces expert load balance and token dispatch costs.
+algorithm	cross-entropy-loss	Token Cross-Entropy Loss	01-foundations	Teacher-forced next-token negative log likelihood.
+algorithm	causal-attention	Causal Self-Attention	02-transformer-architecture	Masked dot-product attention with multi-head projection.
+algorithm	next-token-training	Autoregressive NTP Training Loop	03-pretraining-scaling	Shifted-label objective with validation and optimizer updates.
+algorithm	lora-update	Low-Rank Adapter Update	04-post-training-alignment	Train low-rank factors rather than full frozen weights.
+algorithm	linear-probe	Linear State Probe	05-mechanistic-interpretability	Read states from frozen activations; compare with causal intervention.
+algorithm	group-relative-policy-optimization	GRPO Rollout and Advantage	06-reasoning-rl	Group sampling, relative reward normalization and clipped objective.
+algorithm	tiled-online-attention	Tiled Online Attention	07-inference-optimization	Blockwise online softmax avoids materializing dense attention scores.
+algorithm	top-k-experts	Top-K Expert Routing	08-distributed-frontiers	Route tokens to selected experts and aggregate expert results.
+system	paged-kv	Paged KV Cache	07-inference-optimization	Logical token blocks map to physical memory blocks to reduce fragmentation.
+system	continuous-batching	Continuous Batching	07-inference-optimization	Iteration-level scheduling admits and retires requests dynamically.
+system	prefix-cache	Prefix Cache and Radix Tree	07-inference-optimization	Shared-token prefixes can reuse cached KV blocks across requests.
+system	pd-disaggregation	Prefill/Decode Disaggregation	07-inference-optimization	Separating prompt prefill from token decode introduces KV transfer and placement tradeoffs.
+system	distributed-synchronization	Distributed Collectives and Parallelism	08-distributed-frontiers	All-reduce, all-gather and all-to-all operations determine scalable model execution.

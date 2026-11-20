@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LLM Infra Knowledge Index Record",
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "stage",
+    "path",
+    "status",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^(paper:arxiv:[0-9]{4}\\.[0-9]{4,5}(v[0-9]+)?|(concept|algorithm|system):[a-z0-9-]+)$"
+    },
+    "kind": {
+      "enum": [
+        "paper",
+        "concept",
+        "algorithm",
+        "system"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stage": {
+      "type": "string",
+      "pattern": "^0[1-8]-[a-z0-9-]+$"
+    },
+    "path": {
+      "type": "string",
+      "pattern": "^wiki/.+\\.md$"
+    },
+    "status": {
+      "enum": [
+        "template",
+        "draft",
+        "reviewed"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slug": {
+      "type": "string"
+    },
+    "arxiv_id": {
+      "type": "string",
+      "pattern": "^[0-9]{4}\\.[0-9]{4,5}(v[0-9]+)?$"
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "pdf_url": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "paper"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "slug",
+          "arxiv_id",
+          "source_url",
+          "pdf_url"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": false
+}

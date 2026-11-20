@@ -102,6 +102,14 @@ bash scripts/download_papers.sh --stage 07 --force
 
 Only public arXiv PDF endpoints are used by the core manifests. The script checks the PDF signature, retries transient failures, and preserves successful files. Respect authors' licenses and arXiv rate limits. See [PAPER_POLICY.md](docs/PAPER_POLICY.md).
 
+## Research Wiki and AI Agent Skills
+
+- [Wiki home](wiki/README.md) · [Machine-readable knowledge JSONL](wiki/knowledge.jsonl) · [Knowledge schema](wiki/SCHEMA.md)
+- **42 core paper review templates**, each structured by the ten dimensions: Problem, Observation, Hypothesis, Algorithm, Experiment, Evidence, Limitations, Implementation, Systems and Extension.
+- **30 authored topic cards** across concepts, algorithms and serving systems.
+- **Five portable skills** mirrored under `.claude/skills/`, `.agent/skills/`, `.agents/skills/`, `.pi/skills/` and `.opencode/skills/`. See [Agent Skills](docs/AGENT_SKILLS.md).
+- To refresh the index after editing source metadata: `python3 scripts/build_knowledge_index.py`.
+
 ## Definition of done
 
 A stage is complete only when you have (1) read and annotated the core papers, (2) implemented or reproduced the listed algorithms, (3) run correctness checks and a controlled experiment, (4) recorded hardware, seeds, datasets, metrics and limitations, and (5) updated the stage's task checklist honestly.

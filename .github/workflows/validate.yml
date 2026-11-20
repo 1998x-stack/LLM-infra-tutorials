@@ -1,0 +1,22 @@
+name: repository-validation
+on:
+  push:
+  pull_request:
+jobs:
+  offline-integrity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 scripts/validate_repo.py
+      - run: python3 -m unittest discover -s tests -v
+      - name: Shell syntax check
+        run: |
+          bash -n scripts/download_papers.sh
+          for f in stages/*/papers/core/download.sh; do bash -n "$f"; done
+      - name: Offline PDF download preview
+        run: bash scripts/download_papers.sh --all --dry-run > /dev/null

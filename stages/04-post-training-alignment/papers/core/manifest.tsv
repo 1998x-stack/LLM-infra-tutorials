@@ -1,0 +1,5 @@
+slug	arxiv_id	title
+instructgpt	2203.02155	Training Language Models to Follow Instructions with Human Feedback
+lora	2106.09685	LoRA: Low-Rank Adaptation of Large Language Models
+qlora	2305.14314	QLoRA: Efficient Finetuning of Quantized LLMs
+dpo	2305.18290	Direct Preference Optimization: Your Language Model is Secretly a Reward Model
