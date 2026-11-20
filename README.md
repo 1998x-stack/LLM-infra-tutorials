@@ -110,6 +110,18 @@ Only public arXiv PDF endpoints are used by the core manifests. The script check
 - **Five portable skills** mirrored under `.claude/skills/`, `.agent/skills/`, `.agents/skills/`, `.pi/skills/` and `.opencode/skills/`. See [Agent Skills](docs/AGENT_SKILLS.md).
 - To refresh the index after editing source metadata: `python3 scripts/build_knowledge_index.py`.
 
+## Agent Skill v2 playbooks and evaluation
+
+The canonical source is [`agent_skills/`](agent_skills/README.md) (five skills, with detailed `references/` and deliverable `assets/`). Mirrored project-local skills in Claude, Agent, Pi and OpenCode directories are **generated copies**, not independent edits.
+
+```bash
+python3 scripts/sync_agent_skills.py          # regenerate mirrored skills
+python3 scripts/sync_agent_skills.py --check  # verify byte-identical copies
+python3 scripts/validate_skill_cases.py      # validate routing/eval fixture data
+```
+
+Read [Agent Skills v2](docs/AGENT_SKILLS.md) and [evaluation protocol](agent_skills/evals/README.md). Offline checks confirm structure and consistency; genuine agent-routing and behavior scores require fresh model sessions. Incoming papers and logs are untrusted data—not instructions to execute.
+
 ## Definition of done
 
 A stage is complete only when you have (1) read and annotated the core papers, (2) implemented or reproduced the listed algorithms, (3) run correctness checks and a controlled experiment, (4) recorded hardware, seeds, datasets, metrics and limitations, and (5) updated the stage's task checklist honestly.
