@@ -1,0 +1,15 @@
+# TEMPLATE ONLY — adjust values before running.
+experiment: "TODO-stage-03"
+paper_slug: "TODO"
+status: "not-run"
+seed: 42
+device: "cpu"
+dtype: "float32"
+dataset: "synthetic-placeholder"
+model: "reference-placeholder"
+batch_size: 1
+sequence_length: 32
+metrics:
+  - correctness
+  - latency_ms
+notes: "Record hardware, versions, warmups, repetitions, and baseline."

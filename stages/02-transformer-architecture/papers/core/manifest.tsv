@@ -1,0 +1,6 @@
+slug	arxiv_id	title
+transformer	1706.03762	Attention Is All You Need
+gpt3	2005.14165	Language Models are Few-Shot Learners
+roformer	2104.09864	RoFormer: Enhanced Transformer with Rotary Position Embedding
+gqa	2305.13245	GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints
+mistral7b	2310.06825	Mistral 7B

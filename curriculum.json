@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "stages": [
+    {
+      "id": "01-foundations",
+      "weeks": "1",
+      "title": "Mathematics, Autograd & Language Modeling",
+      "goal": "Master NTP loss and numerical optimization with CPU-verifiable baselines.",
+      "categories": [
+        "algorithms",
+        "autograd",
+        "language-modeling"
+      ],
+      "coreCount": 3,
+      "tasks": [
+        "Stable probability operators",
+        "N-gram model",
+        "Training loop"
+      ]
+    },
+    {
+      "id": "02-transformer-architecture",
+      "weeks": "2–3",
+      "title": "Transformer Architecture",
+      "goal": "Build and verify a modern decoder-only GPT with position encoding and KV-cached decode.",
+      "categories": [
+        "attention",
+        "model",
+        "decoding"
+      ],
+      "coreCount": 5,
+      "tasks": [
+        "Decoder-only model",
+        "RoPE/GQA extensions",
+        "Cached generation"
+      ]
+    },
+    {
+      "id": "03-pretraining-scaling",
+      "weeks": "4–5",
+      "title": "Pretraining & Scaling",
+      "goal": "Run controlled NTP training and analyze the model–data–compute tradeoff.",
+      "categories": [
+        "data",
+        "pretraining",
+        "scaling"
+      ],
+      "coreCount": 5,
+      "tasks": [
+        "Data quality",
+        "Mini pretraining",
+        "Scaling study"
+      ]
+    },
+    {
+      "id": "04-post-training-alignment",
+      "weeks": "6",
+      "title": "SFT, PEFT & Preference Optimization",
+      "goal": "Compare SFT, LoRA/QLoRA and DPO on a fixed held-out instruction set.",
+      "categories": [
+        "sft",
+        "peft",
+        "preference"
+      ],
+      "coreCount": 4,
+      "tasks": [
+        "SFT baseline",
+        "LoRA vs full tune",
+        "DPO study"
+      ]
+    },
+    {
+      "id": "05-mechanistic-interpretability",
+      "weeks": "7–8",
+      "title": "Mechanistic Interpretability",
+      "goal": "Study internal mechanisms with controlled probes, circuits and SAE experiments.",
+      "categories": [
+        "grokking",
+        "probes",
+        "sae"
+      ],
+      "coreCount": 5,
+      "tasks": [
+        "Grokking",
+        "World state",
+        "SAE"
+      ]
+    },
+    {
+      "id": "06-reasoning-rl",
+      "weeks": "9–10",
+      "title": "Reasoning, Search & Reinforcement Learning",
+      "goal": "Evaluate test-time search and a small verifiable-reward policy optimization loop.",
+      "categories": [
+        "prompting",
+        "search",
+        "rl"
+      ],
+      "coreCount": 6,
+      "tasks": [
+        "Reasoning quality",
+        "Budget-aware search",
+        "Group relative RL"
+      ]
+    },
+    {
+      "id": "07-inference-optimization",
+      "weeks": "11–13",
+      "title": "Inference Optimization & Serving",
+      "goal": "Implement correctness-first kernels, cache analysis and reproducible online serving benchmarks.",
+      "categories": [
+        "attention-kernels",
+        "kv-cache",
+        "serving",
+        "benchmarks"
+      ],
+      "coreCount": 8,
+      "tasks": [
+        "Attention kernel lab",
+        "Cache and speculative decode",
+        "Serving benchmark"
+      ]
+    },
+    {
+      "id": "08-distributed-frontiers",
+      "weeks": "14–16",
+      "title": "Distributed Training & Frontier Architecture",
+      "goal": "Reason about DP/TP/PP/EP memory, routing and collective communication tradeoffs.",
+      "categories": [
+        "parallelism",
+        "moe",
+        "distributed-serving"
+      ],
+      "coreCount": 6,
+      "tasks": [
+        "Parallelism calculator",
+        "MoE router",
+        "Distributed case study"
+      ]
+    }
+  ]
+}
