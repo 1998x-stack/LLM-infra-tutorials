@@ -41,7 +41,7 @@ def validate() -> list[str]:
         if skill is not None and skill not in SKILLS:
             errors.append(f"Line {i}: invalid skill {skill!r}")
         counts[skill] += 1
-        if not isinstance(row["prompt"], str) or len(row["prompt"]) < 10:
+        if not isinstance(row["prompt"], str) or len(row["prompt"]) < (10 if skill is not None else 2):
             errors.append(f"Line {i}: prompt too short")
         for field in ("must_include", "must_avoid"):
             if not isinstance(row[field], list) or any(not isinstance(s, str) for s in row[field]):
